@@ -5,7 +5,8 @@ import pytest
 from selene import browser
 
 
-@pytest.fixture(scope = "function", params = [(1920, 1080), (1366, 768), (1536, 864)],
+@pytest.fixture(scope = "function",
+                params = [(1920, 1080), (1366, 768), (1536, 864)],
                 ids = lambda res: f'{res[0]}x{res[1]}')
 def desktop_browser(request):
     browser.config.window_width, browser.config.window_height = request.param
